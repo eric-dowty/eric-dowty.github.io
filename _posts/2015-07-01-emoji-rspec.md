@@ -6,7 +6,7 @@ date:   2015-07-01 12:00:00
 categories: posts
 ---
 
-We all want to class up our test suites now and again. For this I like to incorporate emoji's into my Rspec testing with the emoji-rspec gem. No more boring red and green text! For source code to this problem visit my [GitHub account](https://github.com/eric-dowty/example-emoji-rspec).  
+We all want to class up our test suites now and again. For this I like to incorporate emoji's into my Rspec testing with the emoji-rspec gem. No more boring red and green text! For source code to this problem visit my [GitHub account](https://github.com/eric-dowty/eric-dowty.github.io/tree/master/git-repos/example-emoji-rspec).  
 
 ### Part 1: Create a new Rails app with an RSpec test suite
 
