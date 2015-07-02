@@ -15,9 +15,7 @@ First create a new Rails application by enter the following command in your term
 ```rails new example-emoji-rspec -T
 ```
 
-Next, change directory into the app and open it in your text editor. 
-
-Then add the following to your Gemfile:
+Next, change directory into the app and open it in your text editor. Then add the following to your Gemfile:
 
 ```gem 'rspec-rails'
 ```
@@ -30,11 +28,11 @@ Then from the terminal run:
 ```rails g rspec:install
 ```
 
-Now that we have and RSpec test suite setup we need to write some tests before we can incorporate the emojis.
+Now that we have an RSpec test suite setup we need to write and configure a test before we can incorporate the emojis.
 
 ### Part 2: Create a basic RSpec test file
 
-Now we will create a simple RSpec test file and see what the output looks like. Create a file called example_spec.rb in the 'spec' folder with the following command in the terminal:
+Now we will create a basic RSpec test file and see what the output looks like. Create a file called example_spec.rb in the 'spec' folder with the following command in the terminal:
 
 ```touch spec/example_spec.rb
 ```
@@ -49,6 +47,8 @@ RSpec.describe "an example test" do
   end
   it "fails this test" do
     expect(true).to eq(false)
+  end
+  xit "this test is pending" do
   end
 end
 ```
@@ -68,7 +68,7 @@ We now have our RSpec test up and running, however, it isn't very informative so
 
 ### Part 3: Configure RSpec output
 
-To configure our RSpec output we'll first modify the .rspec file at the root of the folder. Open the .rspec file and add the following to make the RSpec output in the terminal print out each test description:
+To configure our RSpec output we'll first modify the .rspec file. Open the .rspec file and add the following to make the RSpec output in the terminal print out each test description:
 
 ```
 --format documentation
@@ -112,7 +112,7 @@ Next open the .rspec file and add the following:
 --require emoji-rspec
 --format hearts
 ```
-Remember to move the --format documentation to the bottom of the .rspec file or the formatting of the emojis may come out a bit off!!!
+Remember to move the '--format documentation' to the bottom of the .rspec file or the formatting of the emojis may come out a bit off!!!
 
 Next run the test again by entering the following command in the terminal:
 

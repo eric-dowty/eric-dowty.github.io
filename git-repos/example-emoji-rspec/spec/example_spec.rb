@@ -10,4 +10,7 @@ RSpec.describe "an example test" do
     expect(true).to eq(false)
   end
 
+  xit "this test is pending" do
+  end
+
 end
