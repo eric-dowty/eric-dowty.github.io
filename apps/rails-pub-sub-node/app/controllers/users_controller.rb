@@ -4,8 +4,8 @@ class UsersController < ApplicationController
   respond_to :json
 
   def create
-    user = User.find_or_create_by(user_params)
-    $redis.publish('new_message', "#{user.name} has entered the chat")
+    user = User.create_new_user(user_params[:name])
+    $redis.publish('new_user', { name: user.name, color: user.color}.to_json )
     respond_with user, location: nil
   end
 

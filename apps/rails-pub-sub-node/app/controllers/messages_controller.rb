@@ -8,15 +8,16 @@ class MessagesController < ApplicationController
   end
 
   def create
-    message = Message.create(message_params)
-    $redis.publish('new_message', "#{message.user.name}: #{message.body}")
+    user_id = User.find_by(name: message_params[:user_name]).id
+    message = Message.create(user_id: user_id, body: message_params[:body])
+    $redis.publish('new_message', "<span style='color:#{message.user.color}'>#{message.user.name}:</span> #{message.body}")
     respond_with message, location: nil
   end
 
   private
 
   def message_params
-    params.require(:message).permit(:user_id, :body)
+    params.require(:message).permit(:user_name, :body)
   end
 
 end

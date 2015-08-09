@@ -1,0 +1,28 @@
+<html>
+<head>
+  <title>Rails Chat</title>
+</head>
+<body>
+
+  <h1>Welcome to the chat room</h1><br>
+  <ul id='message-view'>
+  </ul>
+
+  <div id='login-div'>
+    <h3>Enter screen name to begin chatting...</h3>
+    <input type='text' name='body' id='enter-name'>
+    <button id='name-submit'>Begin Chat</button>
+  </div>
+
+  <div id='chat-div'>
+    <h3>Message:</h3>
+    <input type='text' name='body' id='message'>
+    <button id='new-message-submit'>Chat!</button>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/jquery-min.js"></script>
+  <script src="/chat.js"></script>
+
+</body>
+</html>

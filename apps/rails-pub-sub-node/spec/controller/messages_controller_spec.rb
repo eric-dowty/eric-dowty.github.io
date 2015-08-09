@@ -8,7 +8,7 @@ RSpec.describe MessagesController, type: :controller do
 
   describe "POST #create" do
     it 'can create a message' do
-      params = {user_id: @user.id, body: 'a new message'}
+      params = {user_name: @user.name, body: 'a new message'}
       post :create, format: :json, message: params
       data = JSON.parse(response.body, symbolize_names: true)
       new_message = Message.first
