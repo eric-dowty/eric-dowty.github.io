@@ -9,6 +9,7 @@ class MessagesController < ApplicationController
 
   def create
     message = Message.create(message_params)
+    $redis.publish('new_message', "#{message.user.name}: #{message.body}")
     respond_with message, location: nil
   end
 

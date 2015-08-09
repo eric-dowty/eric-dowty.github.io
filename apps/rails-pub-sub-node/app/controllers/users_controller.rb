@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def create
     user = User.find_or_create_by(user_params)
+    $redis.publish('new_message', "#{user.name} has entered the chat")
     respond_with user, location: nil
   end
 
